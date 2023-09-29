@@ -1,7 +1,7 @@
 package com.github.naomisoubhia.ecommerce.model;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
+import java.time.Instant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,41 +11,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
-@Table(name = "pessoas")
+@Table(name = "produto")
+@Getter @Setter
 public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name = "nome")
+	@Column(nullable= false, length= 100)
 	private String nome;
 
-	private int preco;
+	@Column(nullable= false)
+	private Instant dataCadastro ;
 	
-	public Long getId() {
-		return id;
-	}
+	
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public int getPreco() {
-		return preco;
-	}
-
-	public void setPreco(int preco) {
-		this.preco = preco;
-	}
 	
 	
 	

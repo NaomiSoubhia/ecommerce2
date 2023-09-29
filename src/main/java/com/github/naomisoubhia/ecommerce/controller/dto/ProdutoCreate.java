@@ -1,26 +1,39 @@
 package com.github.naomisoubhia.ecommerce.controller.dto;
 
+import java.time.Instant;
+
 public class ProdutoCreate {
 
+	private long id;
 	private String nome;
-	private int preco;
+	private Instant dataCadastro ;
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+	
 
 	public String getNome() {
 		return nome;
 	}
 
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public int getPreco() {
-		return preco;
+	public Instant getDataCadastro() {
+		return dataCadastro;
 	}
 
-	public void setPreco(int preco) {
-		this.preco = preco;
+	public void setDataCadastro(Instant dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
-	
+
 	
 
 }
